@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const Input = ({ label, name, type, value, placeholder }) => {
+const Input = ({ label, name, type, value = "", placeholder }) => {
   return (
     <div>
       <div className="flex items-center justify-between">
@@ -13,10 +13,7 @@ const Input = ({ label, name, type, value, placeholder }) => {
         </label>
         {name === "password" ? (
           <div className="text-sm">
-            <Link
-              href="#"
-              className="font-semibold text-indigo-600 hover:text-indigo-500"
-            >
+            <Link href="#" className="font-semibold">
               Forgot password?
             </Link>
           </div>

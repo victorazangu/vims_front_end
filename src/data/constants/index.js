@@ -7,6 +7,9 @@ import {
   faCalendarCheck,
   faChartBar,
   faCogs,
+  faEdit,
+  faTrash,
+  faEye,
 } from "@fortawesome/free-solid-svg-icons";
 
 const navigation = {
@@ -88,4 +91,45 @@ const checkboxes = [
   { label: "Option 3", description: "This is option 3", value: "option3" },
 ];
 
-export { navigation, radioOptions, checkboxes };
+const tableColumns = [
+  { header: "Product name", accessor: "name" },
+  { header: "Color", accessor: "color" },
+  { header: "Category", accessor: "category" },
+  { header: "Price", accessor: "price" },
+];
+
+const tableData = [
+  {
+    name: 'Apple MacBook Pro 17"',
+    color: "Silver",
+    category: "Laptop",
+    price: "$2999",
+  },
+  {
+    name: "Microsoft Surface Pro",
+    color: "White",
+    category: "Laptop PC",
+    price: "$1999",
+  },
+  {
+    name: "Magic Mouse 2",
+    color: "Black",
+    category: "Accessories",
+    price: "$99",
+  },
+];
+
+const tableActions = [
+  { label: "View", icon: faEye, link: "/view" },
+  { label: "Edit", icon: faEdit, link: "/edit" },
+  { label: "Delete", icon: faTrash, link: "/delete" },
+];
+
+export {
+  navigation,
+  radioOptions,
+  checkboxes,
+  tableColumns,
+  tableData,
+  tableActions,
+};

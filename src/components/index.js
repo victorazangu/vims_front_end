@@ -11,6 +11,12 @@ import RadioButtonGroup from "./forms/RadioButtonGroup";
 import RadioButtonOption from "./forms/RadioButtonOption";
 import CheckBoxGroup from "./forms/CheckBoxGroup";
 import Footer from "./navigations/Footer";
+import UserCard from "./cards/UserCard";
+import SimpleButton from "./buttons/SimpleButton";
+import Table from "./tables/Table";
+import TableCell from "./tables/TableCell";
+import TableHead from "./tables/TableHead";
+import TableRow from "./tables/TableRow";
 
 export {
   SideBar,
@@ -26,4 +32,10 @@ export {
   RadioButtonOption,
   CheckBoxGroup,
   Footer,
+  UserCard,
+  SimpleButton,
+  Table,
+  TableCell,
+  TableHead,
+  TableRow,
 };
