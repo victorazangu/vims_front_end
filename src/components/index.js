@@ -10,6 +10,7 @@ import RadioButton from "./forms/RadioButton";
 import RadioButtonGroup from "./forms/RadioButtonGroup";
 import RadioButtonOption from "./forms/RadioButtonOption";
 import CheckBoxGroup from "./forms/CheckBoxGroup";
+import Footer from "./navigations/Footer";
 
 export {
   SideBar,
@@ -24,4 +25,5 @@ export {
   RadioButtonGroup,
   RadioButtonOption,
   CheckBoxGroup,
+  Footer,
 };

@@ -1,4 +1,4 @@
-import { SideBar, NavBar } from "@/components";
+import { SideBar, NavBar, Footer } from "@/components";
 
 export default function Home() {
   return (
@@ -12,6 +12,9 @@ export default function Home() {
         </div>
         <div className="flex-grow overflow-auto">
           <div>Body Content</div>
+        </div>
+        <div className="flex-shrink-0">
+          <Footer />
         </div>
       </div>
     </div>
