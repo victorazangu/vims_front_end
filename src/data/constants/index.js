@@ -12,7 +12,7 @@ import {
 const navigation = {
   dashboard: {
     title: "Dashboard",
-    icon: faTachometerAlt, 
+    icon: faTachometerAlt,
     items: [
       { title: "Overview", link: "/dashboard/overview" },
       { title: "Activity", link: "/dashboard/activity" },
@@ -20,7 +20,7 @@ const navigation = {
   },
   students: {
     title: "Students",
-    icon: faUserGraduate, 
+    icon: faUserGraduate,
     items: [
       { title: "Student List", link: "/students/list" },
       { title: "Add Student", link: "/students/add" },
@@ -29,7 +29,7 @@ const navigation = {
   },
   teachers: {
     title: "Teachers",
-    icon: faChalkboardTeacher, 
+    icon: faChalkboardTeacher,
     items: [
       { title: "Teacher List", link: "/teachers/list" },
       { title: "Add Teacher", link: "/teachers/add" },
@@ -37,7 +37,7 @@ const navigation = {
   },
   classes: {
     title: "Classes",
-    icon: faBook, 
+    icon: faBook,
     items: [
       { title: "Class List", link: "/classes/list" },
       { title: "Add Class", link: "/classes/add" },
@@ -45,7 +45,7 @@ const navigation = {
   },
   subjects: {
     title: "Subjects",
-    icon: faClipboardList, 
+    icon: faClipboardList,
     items: [
       { title: "Subject List", link: "/subjects/list" },
       { title: "Assign Subject", link: "/subjects/assign" },
@@ -53,7 +53,7 @@ const navigation = {
   },
   attendance: {
     title: "Attendance",
-    icon: faCalendarCheck, 
+    icon: faCalendarCheck,
     items: [
       { title: "Mark Attendance", link: "/attendance/mark" },
       { title: "Attendance Report", link: "/attendance/report" },
@@ -61,7 +61,7 @@ const navigation = {
   },
   grades: {
     title: "Grades",
-    icon: faChartBar, 
+    icon: faChartBar,
     items: [
       { title: "Grade List", link: "/grades/list" },
       { title: "Add Grades", link: "/grades/add" },
@@ -69,7 +69,7 @@ const navigation = {
   },
   settings: {
     title: "Settings",
-    icon: faCogs, 
+    icon: faCogs,
     items: [
       { title: "School Settings", link: "/settings/school" },
       { title: "User Management", link: "/settings/users" },
@@ -77,4 +77,15 @@ const navigation = {
   },
 };
 
-export { navigation };
+const radioOptions = [
+  { id: "push-everything", label: "Everything", disabled: false },
+  { id: "push-email", label: "Same as email", disabled: false },
+];
+
+const checkboxes = [
+  { label: "Option 1", description: "This is option 1", value: "option1" },
+  { label: "Option 2", description: "This is option 2", value: "option2" },
+  { label: "Option 3", description: "This is option 3", value: "option3" },
+];
+
+export { navigation, radioOptions, checkboxes };
