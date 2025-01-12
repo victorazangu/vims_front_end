@@ -6,7 +6,7 @@ import { faBell } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 const ProfileSection = () => {
   return (
-    <div className="hidden md:flex space-x-6 ml-auto px-2">
+    <div className="flex space-x-6 ml-auto px-2">
       <Link href="/">
         <FontAwesomeIcon
           icon={faBell}
