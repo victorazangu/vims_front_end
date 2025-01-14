@@ -13,6 +13,7 @@ import {
   faDollar,
 } from "@fortawesome/free-solid-svg-icons";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import DefaultImage from "@/assets/images/default.png";
 const navigation = {
   dashboard: {
     title: "Dashboard",
@@ -22,7 +23,12 @@ const navigation = {
   students: {
     title: "Students",
     icon: faUserGraduate,
-    items: [{ title: "Students", link: "/students" }],
+    items: [
+      { title: "Form 1", link: "/students" },
+      { title: "Form 2", link: "/students" },
+      { title: "Form 3", link: "/students" },
+      { title: "Form 4", link: "/students" },
+    ],
   },
   teachers: {
     title: "Teachers",
@@ -32,7 +38,12 @@ const navigation = {
   classes: {
     title: "Classes",
     icon: faBook,
-    items: [{ title: "Classes", link: "/classes" }],
+    items: [
+      { title: "Form 1", link: "/classes" },
+      { title: "Form 2", link: "/classes" },
+      { title: "Form 3", link: "/classes" },
+      { title: "Form 4", link: "/classes" },
+    ],
   },
   subjects: {
     title: "Subjects",
@@ -134,7 +145,36 @@ const tableData = [
     dob: "1992-07-20",
     address: "789 Magic Ln, Cupertino, CA",
   },
-  
+  {
+    first_name: "Alice",
+    last_name: "Johnson",
+    dob: "1992-07-20",
+    address: "789 Magic Ln, Cupertino, CA",
+  },
+  {
+    first_name: "Jane",
+    last_name: "Smith",
+    dob: "1985-05-15",
+    address: "456 Microsoft Way, Redmond, WA",
+  },
+  {
+    first_name: "Alice",
+    last_name: "Johnson",
+    dob: "1992-07-20",
+    address: "789 Magic Ln, Cupertino, CA",
+  },
+  {
+    first_name: "Jane",
+    last_name: "Smith",
+    dob: "1985-05-15",
+    address: "456 Microsoft Way, Redmond, WA",
+  },
+  {
+    first_name: "Alice",
+    last_name: "Johnson",
+    dob: "1992-07-20",
+    address: "789 Magic Ln, Cupertino, CA",
+  },
 ];
 
 const tableActions = [
@@ -226,6 +266,129 @@ const calenderConfigAndData = {
   },
 };
 
+const teachersData = [
+  {
+    id: 1,
+    name: "Alice Johnson",
+    designation: "Software Engineer",
+    image: DefaultImage,
+  },
+  {
+    id: 2,
+    name: "Bob Smith",
+    designation: "Product Manager",
+    image: DefaultImage,
+  },
+  {
+    id: 3,
+    name: "Charlie Davis",
+    designation: "UI/UX Designer",
+    image: DefaultImage,
+  },
+  {
+    id: 4,
+    name: "David Lee",
+    designation: "Frontend Developer",
+    image: DefaultImage,
+  },
+  {
+    id: 5,
+    name: "Eva Adams",
+    designation: "Backend Developer",
+    image: DefaultImage,
+  },
+  {
+    id: 6,
+    name: "Frank Moore",
+    designation: "QA Engineer",
+    image: DefaultImage,
+  },
+  {
+    id: 7,
+    name: "Grace Taylor",
+    designation: "Product Designer",
+    image: DefaultImage,
+  },
+  {
+    id: 8,
+    name: "Henry Wilson",
+    designation: "Marketing Specialist",
+    image: DefaultImage,
+  },
+  {
+    id: 9,
+    name: "Ivy Brown",
+    designation: "HR Manager",
+    image: DefaultImage,
+  },
+  {
+    id: 10,
+    name: "Jack White",
+    designation: "Chief Technology Officer",
+    image: DefaultImage,
+  },
+  {
+    id: 11,
+    name: "Kara Green",
+    designation: "Sales Manager",
+    image: DefaultImage,
+  },
+  {
+    id: 12,
+    name: "Leo Harris",
+    designation: "Customer Support Specialist",
+    image: DefaultImage,
+  },
+  {
+    id: 13,
+    name: "Mona Scott",
+    designation: "Finance Manager",
+    image: DefaultImage,
+  },
+  {
+    id: 14,
+    name: "Nina Martin",
+    designation: "Social Media Manager",
+    image: DefaultImage,
+  },
+  {
+    id: 15,
+    name: "Oscar Young",
+    designation: "Business Analyst",
+    image: DefaultImage,
+  },
+  {
+    id: 16,
+    name: "Paul Carter",
+    designation: "Content Strategist",
+    image: DefaultImage,
+  },
+  {
+    id: 17,
+    name: "Quincy Allen",
+    designation: "Lead Developer",
+    image: DefaultImage,
+  },
+  {
+    id: 18,
+    name: "Rachel King",
+    designation: "Project Manager",
+    image: DefaultImage,
+  },
+  {
+    id: 19,
+    name: "Steve White",
+    designation: "Security Engineer",
+    image: DefaultImage,
+  },
+  {
+    id: 20,
+    name: "Tina Walker",
+    designation: "Marketing Director",
+    image: DefaultImage,
+  },
+];
+
 export {
   navigation,
   radioOptions,
@@ -239,5 +402,6 @@ export {
   pieGraphData,
   daughnutGraphData,
   lineGraphData,
-  calenderConfigAndData
+  calenderConfigAndData,
+  teachersData,
 };
