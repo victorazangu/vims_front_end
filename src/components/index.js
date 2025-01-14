@@ -17,6 +17,14 @@ import Table from "./tables/Table";
 import TableCell from "./tables/TableCell";
 import TableHead from "./tables/TableHead";
 import TableRow from "./tables/TableRow";
+import LineGraph from "./charts/LineGraph";
+import BarGraph from "./charts/BarGraph";
+import DoughnutGraph from "./charts/DoughnutGraph";
+import PieGraph from "./charts/PieGraph";
+import BubbleGraph from "./charts/BubbleGraph";
+import GaugeChart from "./charts/GaugeChart";
+import Layout from "./layout/Layout";
+import CustomeFullCalender from "./calenders/CustomeFullCalender";
 
 export {
   SideBar,
@@ -38,4 +46,12 @@ export {
   TableCell,
   TableHead,
   TableRow,
+  LineGraph,
+  BarGraph,
+  DoughnutGraph,
+  PieGraph,
+  BubbleGraph,
+  GaugeChart,
+  Layout,
+  CustomeFullCalender,
 };
