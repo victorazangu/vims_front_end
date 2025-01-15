@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import DefaultImage from "@/assets/images/default.png";
+import UserImage from "@/assets/images/user.jpg";
 const navigation = {
   dashboard: {
     title: "Dashboard",
@@ -389,6 +390,110 @@ const teachersData = [
   },
 ];
 
+const teachersDataTwo = [
+  {
+    name: "Leslie Alexander",
+    title: "Co-Founder / CEO",
+    emp_id: "VSA-001",
+    imgSrc: UserImage,
+  },
+  {
+    name: "Michael Foster",
+    title: "Co-Founder / CTO",
+    emp_id: "VSA-002",
+    imgSrc: UserImage,
+  },
+  {
+    name: "Dries Vincent",
+    title: "Business Relations",
+    emp_id: "VSA-003",
+    imgSrc: UserImage,
+  },
+  {
+    name: "Lindsay Walton",
+    title: "Front-end Developer",
+    emp_id: "VSA-004",
+    imgSrc: UserImage,
+  },
+  {
+    name: "Courtney Henry",
+    title: "Designer",
+    emp_id: "VSA-005",
+    imgSrc: UserImage,
+  },
+  {
+    name: "Tom Cook",
+    title: "Director of Product",
+    emp_id: "VSA-006",
+    imgSrc: UserImage,
+  },
+  {
+    name: "Whitney Francis",
+    title: "Copywriter",
+    emp_id: "VSA-007",
+    imgSrc: UserImage,
+  },
+  {
+    name: "Leonard Krasner",
+    title: "Senior Designer",
+    emp_id: "VSA-008",
+    imgSrc: UserImage,
+  },
+  {
+    name: "Courtney Henry",
+    title: "Designer",
+    emp_id: "VSA-005",
+    imgSrc: UserImage,
+  },
+  {
+    name: "Tom Cook",
+    title: "Director of Product",
+    emp_id: "VSA-006",
+    imgSrc: UserImage,
+  },
+  {
+    name: "Whitney Francis",
+    title: "Copywriter",
+    emp_id: "VSA-007",
+    imgSrc: UserImage,
+  },
+  {
+    name: "Leonard Krasner",
+    title: "Senior Designer",
+    emp_id: "VSA-008",
+    imgSrc: UserImage,
+  },
+  {
+    name: "Leslie Alexander",
+    title: "Co-Founder / CEO",
+    emp_id: "VSA-001",
+    imgSrc: UserImage,
+  },
+  {
+    name: "Michael Foster",
+    title: "Co-Founder / CTO",
+    emp_id: "VSA-002",
+    imgSrc: UserImage,
+  },
+  {
+    name: "Dries Vincent",
+    title: "Business Relations",
+    emp_id: "VSA-003",
+    imgSrc: UserImage,
+  },
+  {
+    name: "Lindsay Walton",
+    title: "Front-end Developer",
+    emp_id: "VSA-004",
+    imgSrc: UserImage,
+  },
+  {
+    name: "Courtney Henry",
+    title: "Designer",
+    emp_id: "VSA-005",
+    imgSrc: UserImage,
+  },
+];
 export {
   navigation,
   radioOptions,
@@ -404,4 +509,5 @@ export {
   lineGraphData,
   calenderConfigAndData,
   teachersData,
+  teachersDataTwo,
 };

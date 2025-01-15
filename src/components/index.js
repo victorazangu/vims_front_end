@@ -12,6 +12,7 @@ import RadioButtonOption from "./forms/RadioButtonOption";
 import CheckBoxGroup from "./forms/CheckBoxGroup";
 import Footer from "./navigations/Footer";
 import UserCard from "./cards/UserCard";
+import UserCardTwo from "./cards/UserCardTwo";
 import SimpleButton from "./buttons/SimpleButton";
 import Table from "./tables/Table";
 import TableCell from "./tables/TableCell";
@@ -25,6 +26,8 @@ import BubbleGraph from "./charts/BubbleGraph";
 import GaugeChart from "./charts/GaugeChart";
 import Layout from "./layout/Layout";
 import CustomeFullCalender from "./calenders/CustomeFullCalender";
+import MainModal from "./modals/MainModal";
+import MainForm from "./forms/MainForm";
 
 export {
   SideBar,
@@ -54,4 +57,7 @@ export {
   GaugeChart,
   Layout,
   CustomeFullCalender,
+  UserCardTwo,
+  MainModal,
+  MainForm,
 };

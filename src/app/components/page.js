@@ -17,6 +17,7 @@ import {
   GaugeChart,
   CustomeFullCalender,
   Layout,
+  UserCardTwo,
 } from "@/components";
 import {
   radioOptions,
@@ -31,12 +32,16 @@ import {
   pieGraphData,
   daughnutGraphData,
   calenderConfigAndData,
+  teachersDataTwo,
 } from "@/data/constants";
 import DefaultImage from "@/assets/images/default.png";
 
 const Componet = () => {
   return (
     <div className="p-3 m-3">
+      <div className="w-full">
+        <UserCardTwo teamMembers={teachersDataTwo} />
+      </div>
       <div className="pr-2 mr-2">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 justify-center items-center text-center mx-auto p-2 m-2">
           <div className="w-full">
