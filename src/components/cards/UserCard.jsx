@@ -3,7 +3,6 @@ import Image from "next/image";
 import SimpleButton from "../buttons/SimpleButton";
 
 const UserCard = ({ name, designation, image, bg }) => {
-  console.log("UserCard", bg);
   return (
     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-[#b99c6f] dark:border-[EDC384]">
       <div className="flex flex-col items-center pb-10 pt-8">

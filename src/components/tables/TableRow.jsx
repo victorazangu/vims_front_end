@@ -1,8 +1,13 @@
 import TableCell from "./TableCell";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRouter } from "next/navigation";
 
 const TableRow = ({ columns, rowData, actions }) => {
+  const router = useRouter();
+  const handleCardClick = (empId) => {
+    router.push(`/students/${empId}`);
+  };
   return (
     <tr className="bg-white border-b  dark:border-gray-700">
       {columns.map((column, idx) => (
@@ -13,9 +18,9 @@ const TableRow = ({ columns, rowData, actions }) => {
       {actions && (
         <TableCell className="text-right flex space-x-2">
           {actions.map((action, idx) => (
-            <Link
+            <button
               key={idx}
-              href={action.link}
+              onClick={() => handleCardClick(rowData.id)}
               className="font-medium hover:underline text-center text-[#b99c6f]"
             >
               <FontAwesomeIcon
@@ -24,7 +29,7 @@ const TableRow = ({ columns, rowData, actions }) => {
                 width={20}
                 height={20}
               />
-            </Link>
+            </button>
           ))}
         </TableCell>
       )}

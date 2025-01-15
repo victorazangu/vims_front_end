@@ -1,13 +1,19 @@
-import React from "react";
+"use client";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 const UserCardTwo = ({ teamMembers }) => {
+  const router = useRouter();
+  const handleCardClick = (empId) => {
+    router.push(`/teachers/${empId}`);
+  };
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
       {teamMembers.map((member, index) => (
         <div
           key={index}
           className="bg-gray-700 rounded-lg shadow-lg overflow-hidden"
+          onClick={() => handleCardClick(member.emp_id)}
         >
           <Image
             src={member.imgSrc}
@@ -22,7 +28,6 @@ const UserCardTwo = ({ teamMembers }) => {
         </div>
       ))}
     </div>
-
   );
 };
 

@@ -105,72 +105,84 @@ const tableColumns = [
 
 const tableData = [
   {
+    id: 1,
     first_name: "John",
     last_name: "Doe",
     dob: "1990-01-01",
     address: "123 Apple St, Cupertino, CA",
   },
   {
+    id: 2,
     first_name: "Jane",
     last_name: "Smith",
     dob: "1985-05-15",
     address: "456 Microsoft Way, Redmond, WA",
   },
   {
+    id: 3,
     first_name: "Alice",
     last_name: "Johnson",
     dob: "1992-07-20",
     address: "789 Magic Ln, Cupertino, CA",
   },
   {
+    id: 4,
     first_name: "Jane",
     last_name: "Smith",
     dob: "1985-05-15",
     address: "456 Microsoft Way, Redmond, WA",
   },
   {
+    id: 5,
     first_name: "Alice",
     last_name: "Johnson",
     dob: "1992-07-20",
     address: "789 Magic Ln, Cupertino, CA",
   },
   {
+    id: 6,
     first_name: "Jane",
     last_name: "Smith",
     dob: "1985-05-15",
     address: "456 Microsoft Way, Redmond, WA",
   },
   {
+    id: 7,
     first_name: "Alice",
     last_name: "Johnson",
     dob: "1992-07-20",
     address: "789 Magic Ln, Cupertino, CA",
   },
   {
+    id: 8,
     first_name: "Alice",
     last_name: "Johnson",
     dob: "1992-07-20",
     address: "789 Magic Ln, Cupertino, CA",
   },
   {
+    id: 9,
     first_name: "Jane",
     last_name: "Smith",
     dob: "1985-05-15",
     address: "456 Microsoft Way, Redmond, WA",
   },
   {
+    id: 10,
     first_name: "Alice",
     last_name: "Johnson",
     dob: "1992-07-20",
     address: "789 Magic Ln, Cupertino, CA",
   },
   {
+    id: 11,
     first_name: "Jane",
     last_name: "Smith",
     dob: "1985-05-15",
     address: "456 Microsoft Way, Redmond, WA",
   },
   {
+    id: 12,
     first_name: "Alice",
     last_name: "Johnson",
     dob: "1992-07-20",
@@ -179,9 +191,9 @@ const tableData = [
 ];
 
 const tableActions = [
-  { label: "View", icon: faEye, link: "/view" },
-  { label: "Edit", icon: faEdit, link: "/edit" },
-  { label: "Delete", icon: faTrash, link: "/delete" },
+  { label: "View", icon: faEye, link: (id) => `/${id}` },
+  { label: "Edit", icon: faEdit, link: (id) => `/${id}` },
+  { label: "Delete", icon: faTrash, link: (id) => `/${id}` },
 ];
 
 const barChartData = {

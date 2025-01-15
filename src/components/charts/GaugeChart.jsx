@@ -6,7 +6,6 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const GaugeChart = ({ labels, input, stats, backgroundColor }) => {
-  console.log("backgroundColors :>> ", backgroundColor);
   const percentage = input[0];
   const remaining = 100 - percentage;
 
