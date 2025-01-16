@@ -1,17 +1,4 @@
 "use client";
-
-// import Link from "next/link";
-
-// const NavLink = ({ href, name }) => {
-//   return (
-//     <div>
-//       <Link href={href}>{/* <a>{children}</a> */}</Link>
-//     </div>
-//   );
-// };
-
-// export default NavLink;
-
 import React, { useState } from "react";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import NavSection from "./NavSection";

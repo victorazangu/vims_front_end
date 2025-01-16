@@ -1,10 +1,3 @@
-// import { Layout } from "@/components";
-
-// const Attendance = () => {
-//   return <Layout>Attendance</Layout>;
-// };
-
-// export default Attendance;
 
 "use client";
 import {
