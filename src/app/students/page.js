@@ -1,5 +1,5 @@
 "use client";
-import { useState, useActionState } from "react";
+import { useState, useActionState, useEffect } from "react";
 import {
   Layout,
   Table,
@@ -8,6 +8,8 @@ import {
   MainForm,
   Input,
   Submit,
+  DateRangePicker,
+  CustomSelect,
 } from "@/components";
 import { tableColumns, tableData, tableActions } from "@/data/constants";
 import { createStudent } from "./actions";
@@ -28,15 +30,64 @@ const Student = () => {
   const pending = false;
 
   const handleModal = () => setShowModal(!showModal);
+  const [fromDate, setFromDate] = useState(
+    new Date(new Date().getFullYear(), 0, 2).toISOString().split("T")[0]
+  );
+  const [toDate, setToDate] = useState(
+    new Date(new Date().getFullYear(), 11, 32).toISOString().split("T")[0]
+  );
+  const [selectedUser, setSelectedUser] = useState("");
+
+  const users = [
+    "English",
+    "Kiswahili",
+    "Chemistry",
+    "Physics",
+    "Biology",
+    "Mathematics",
+    "History",
+  ];
+
+  const logFilters = () => {
+    console.log("Filters:");
+
+    console.log("From Date:", fromDate);
+    console.log("To Date:", toDate);
+    console.log("Assigned to:", selectedUser);
+  };
+
+  useEffect(() => {
+    logFilters();
+  }, [fromDate, toDate, selectedUser]);
 
   return (
     <Layout>
       <div className="sticky top-0 bg-white z-10 pr-3 p-1 shadow-sm">
-        <div className="flex justify-end">
-          <SimpleButton title={"Add Student"} onClick={handleModal} />
+        <div className="flex justify-between items-center">
+          <div className="flex space-x-4">
+            <div>
+              <DateRangePicker
+                fromDate={fromDate}
+                toDate={toDate}
+                onFromDateChange={setFromDate}
+                onToDateChange={setToDate}
+              />
+            </div>
+            <div className="">
+              <CustomSelect
+                label=""
+                options={users}
+                selected={selectedUser}
+                onChange={setSelectedUser}
+              />
+            </div>
+          </div>
+          <div>
+            <SimpleButton title={"Add Class"} onClick={handleModal} />
+          </div>
         </div>
       </div>
-      <div className="pr-3 mr-3">
+      <div className="pr-3 mr-3 mt-4">
         <Table
           caption="Students"
           description="list of students and more."

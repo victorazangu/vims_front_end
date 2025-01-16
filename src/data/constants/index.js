@@ -25,10 +25,7 @@ const navigation = {
     title: "Students",
     icon: faUserGraduate,
     items: [
-      { title: "Form 1", link: "/students" },
-      { title: "Form 2", link: "/students" },
-      { title: "Form 3", link: "/students" },
-      { title: "Form 4", link: "/students" },
+      { title: "Students", link: "/students" },
     ],
   },
   teachers: {
@@ -40,34 +37,29 @@ const navigation = {
     title: "Classes",
     icon: faBook,
     items: [
-      { title: "Form 1", link: "/classes" },
-      { title: "Form 2", link: "/classes" },
-      { title: "Form 3", link: "/classes" },
-      { title: "Form 4", link: "/classes" },
+      { title: "Classes", link: "/classes" },
     ],
   },
   subjects: {
     title: "Subjects",
     icon: faClipboardList,
     items: [
-      { title: "Subjects", link: "/subjects/all-subjects" },
-      { title: "Subjects Per Class", link: "/subjects/classes" },
+      { title: "Subjects", link: "/subjects" },
     ],
   },
   attendance: {
     title: "Attendance",
     icon: faCalendarCheck,
     items: [
-      { title: "Attendance", link: "/attendance/mark" },
-      { title: "Per Class", link: "/attendance/report" },
+      { title: "Attendance", link: "/attendances" },
     ],
   },
   grades: {
     title: "Grades",
     icon: faChartBar,
     items: [
-      { title: "Grade List", link: "/grades/list" },
-      { title: "Add Grades", link: "/grades/add" },
+      { title: "Grades", link: "/grades" },
+
     ],
   },
   fees: {
@@ -79,8 +71,7 @@ const navigation = {
     title: "Settings",
     icon: faCogs,
     items: [
-      { title: "School Settings", link: "/settings/school" },
-      { title: "User Management", link: "/settings/users" },
+      { title: "Settings", link: "/settings" },
     ],
   },
 };
@@ -506,6 +497,113 @@ const teachersDataTwo = [
     imgSrc: UserImage,
   },
 ];
+const classesData = [
+  {
+    id: "1",
+    title: "Math Class",
+    start: "2025-01-20T10:00:00",
+    end: "2025-01-20T12:00:00",
+    description: "This is a Math class covering algebra and geometry.",
+    location: "Room 101",
+  },
+  {
+    id: "2",
+    title: "Science Class",
+    start: "2025-01-21T14:00:00",
+    end: "2025-01-21T16:00:00",
+    description: "This is a Science class focusing on chemistry basics.",
+    location: "Room 202",
+  },
+  {
+    id: "3",
+    title: "History Class",
+    start: "2025-02-05T09:00:00",
+    end: "2025-02-05T11:00:00",
+    description: "This is a History class discussing World War II.",
+    location: "Room 103",
+  },
+  {
+    id: "4",
+    title: "English Class",
+    start: "2025-03-12T13:00:00",
+    end: "2025-03-12T15:00:00",
+    description: "This is an English class on creative writing techniques.",
+    location: "Room 104",
+  },
+  {
+    id: "5",
+    title: "Physics Class",
+    start: "2025-04-18T10:00:00",
+    end: "2025-04-18T12:00:00",
+    description: "This is a Physics class on motion and forces.",
+    location: "Room 201",
+  },
+  {
+    id: "6",
+    title: "Chemistry Class",
+    start: "2025-05-09T14:00:00",
+    end: "2025-05-09T16:00:00",
+    description: "This is a Chemistry class on organic compounds.",
+    location: "Room 202",
+  },
+  {
+    id: "7",
+    title: "Biology Class",
+    start: "2025-06-15T09:00:00",
+    end: "2025-06-15T11:00:00",
+    description: "This is a Biology class on human anatomy.",
+    location: "Room 203",
+  },
+  {
+    id: "8",
+    title: "Economics Class",
+    start: "2025-07-10T13:00:00",
+    end: "2025-07-10T15:00:00",
+    description: "This is an Economics class on supply and demand.",
+    location: "Room 204",
+  },
+  {
+    id: "9",
+    title: "Computer Science Class",
+    start: "2025-08-23T10:00:00",
+    end: "2025-08-23T12:00:00",
+    description: "This is a Computer Science class on algorithms.",
+    location: "Room 301",
+  },
+  {
+    id: "10",
+    title: "Art Class",
+    start: "2025-09-30T14:00:00",
+    end: "2025-09-30T16:00:00",
+    description: "This is an Art class on painting techniques.",
+    location: "Room 302",
+  },
+  {
+    id: "11",
+    title: "Philosophy Class",
+    start: "2025-10-22T09:00:00",
+    end: "2025-10-22T11:00:00",
+    description: "This is a Philosophy class on ethics and morality.",
+    location: "Room 303",
+  },
+  {
+    id: "12",
+    title: "Music Class",
+    start: "2025-11-15T13:00:00",
+    end: "2025-11-15T15:00:00",
+    description: "This is a Music class on classical compositions.",
+    location: "Room 304",
+  },
+  {
+    id: "13",
+    title: "Physical Education",
+    start: "2025-12-05T10:00:00",
+    end: "2025-12-05T12:00:00",
+    description: "This is a PE class focusing on fitness exercises.",
+    location: "Gym",
+  },
+];
+
 export {
   navigation,
   radioOptions,
@@ -522,4 +620,5 @@ export {
   calenderConfigAndData,
   teachersData,
   teachersDataTwo,
+  classesData,
 };

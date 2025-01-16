@@ -33,9 +33,9 @@ const NavSection = ({ title, items, icon }) => {
 
       {isOpen && (
         <div className="mt-2 space-y-2 px-7">
-          {items.map((item) => (
+          {items.map((item,index) => (
             <Link
-              key={item.link}
+              key={index}
               href={`/${item.link.replace(/^\/+/, "")}`}
               className="block p-2 text-sm transition-colors duration-200 rounded-md hover:text-white hover:bg-[#b99e70]"
             >

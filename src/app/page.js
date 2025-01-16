@@ -9,6 +9,9 @@ import {
   DoughnutGraph,
   Table,
   CustomeFullCalender,
+  DropdownFilter,
+  DateRangePicker,
+  CustomSelect,
 } from "@/components";
 import {
   barChartData,
@@ -22,10 +25,70 @@ import {
   daughnutGraphData,
   calenderConfigAndData,
 } from "@/data/constants";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [selectedOption, setSelectedOption] = useState("");
+  const [fromDate, setFromDate] = useState(
+    new Date(new Date().getFullYear(), 0, 2).toISOString().split("T")[0]
+  );
+  const [toDate, setToDate] = useState(
+    new Date(new Date().getFullYear(), 11, 32).toISOString().split("T")[0]
+  );
+  const [selectedUser, setSelectedUser] = useState("");
+  const users = [
+    "Wade Cooper",
+    "Arlene Mccoy",
+    "Devon Webb",
+    "Tom Cook",
+    "Tanya Fox",
+    "Hellen Schmidt",
+    "Caroline Schultz",
+  ];
+  const dropdownOptions = ["Form 1", "Form 2", "Form 3", "Form 4"];
+  const logFilters = () => {
+    console.log("Filters:");
+    console.log("Class:", selectedOption);
+    console.log("From Date:", fromDate);
+    console.log("To Date:", toDate);
+    console.log("Assigned to:", selectedUser);
+  };
+
+  useEffect(() => {
+    logFilters();
+  }, [selectedOption, fromDate, toDate, selectedUser]);
   return (
     <Layout>
+      <div className="sticky top-0 bg-white z-10 pr-3 p-1 shadow-sm">
+        <div className="flex justify-between items-center">
+          <div className="flex space-x-4">
+            <div>
+              <DropdownFilter
+                options={dropdownOptions}
+                selected={selectedOption}
+                onChange={setSelectedOption}
+                placeholder="Class"
+              />
+            </div>
+            <div>
+              <DateRangePicker
+                fromDate={fromDate}
+                toDate={toDate}
+                onFromDateChange={setFromDate}
+                onToDateChange={setToDate}
+              />
+            </div>
+            <div className="">
+              <CustomSelect
+                label=""
+                options={users}
+                selected={selectedUser}
+                onChange={setSelectedUser}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="pr-2 mr-2">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 justify-center items-center text-center mx-auto p-2 m-2">
           <div className="w-full">

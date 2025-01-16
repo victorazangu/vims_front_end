@@ -10,9 +10,9 @@ const RadioButtonGroup = ({ options, name, defaultChecked }) => {
 
   return (
     <div className="mt-6 space-y-6">
-      {options.map((option) => (
+      {options.map((option,index) => (
         <RadioButtonOption
-          key={option.id}
+          key={index}
           id={option.id}
           name={name}
           label={option.label}

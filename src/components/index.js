@@ -28,6 +28,12 @@ import Layout from "./layout/Layout";
 import CustomeFullCalender from "./calenders/CustomeFullCalender";
 import MainModal from "./modals/MainModal";
 import MainForm from "./forms/MainForm";
+import CalendarComponent from "./calenders/CalendarComponent";
+import TeacherMyProfileComponent from "./commons/teachers/TeacherMyProfileComponent";
+import StudentMyProfileComponent from "./commons/students/StudentMyProfileComponent";
+import DateRangePicker from "./commons/filtering/DateRangePicker";
+import DropdownFilter from "./commons/filtering/DropdownFilter";
+import CustomSelect from "./commons/filtering/CustomSelect";
 
 export {
   SideBar,
@@ -60,4 +66,10 @@ export {
   UserCardTwo,
   MainModal,
   MainForm,
+  CalendarComponent,
+  TeacherMyProfileComponent,
+  StudentMyProfileComponent,
+  DateRangePicker,
+  DropdownFilter,
+  CustomSelect,
 };

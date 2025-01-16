@@ -10,9 +10,9 @@ const CheckBoxGroup = ({ checkboxes }) => {
 
   return (
     <div className="mt-6 space-y-6">
-      {checkboxes.map((checkbox) => (
+      {checkboxes.map((checkbox,index) => (
         <CheckBox
-          key={checkbox.value}
+          key={index}
           label={checkbox.label}
           description={checkbox.description}
           value={checkbox.value}

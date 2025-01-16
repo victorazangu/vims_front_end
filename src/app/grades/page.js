@@ -1,24 +1,17 @@
+
 "use client";
-import { useState, useEffect } from "react";
 import {
   Layout,
-  UserCardTwo,
-  SimpleButton,
-  MainModal,
-  MainForm,
-  Input,
-  Submit,
   DropdownFilter,
   DateRangePicker,
   CustomSelect,
+  SimpleButton,
 } from "@/components";
-const { createTeacher, getTeachers } = require("./actions");
+import { useState, useEffect } from "react";
 
-const Teacher = () => {
+const Grade = () => {
   const [showModal, setShowModal] = useState(false);
   const handleModal = () => setShowModal(!showModal);
-  const [teamMembers, setTeamMembers] = useState([]);
-  const [pending, setPending] = useState(true);
   const [selectedOption, setSelectedOption] = useState("");
   const [fromDate, setFromDate] = useState(
     new Date(new Date().getFullYear(), 0, 2).toISOString().split("T")[0]
@@ -29,13 +22,13 @@ const Teacher = () => {
   const [selectedUser, setSelectedUser] = useState("");
 
   const users = [
-    "English",
-    "Kiswahili",
-    "Chemistry",
-    "Physics",
-    "Biology",
-    "Mathematics",
-    "History",
+    "Wade Cooper",
+    "Arlene Mccoy",
+    "Devon Webb",
+    "Tom Cook",
+    "Tanya Fox",
+    "Hellen Schmidt",
+    "Caroline Schultz",
   ];
   const dropdownOptions = ["Form 1", "Form 2", "Form 3", "Form 4"];
 
@@ -52,11 +45,11 @@ const Teacher = () => {
   }, [selectedOption, fromDate, toDate, selectedUser]);
 
   useEffect(() => {
-    const fetchTeachers = async () => {
+    const fetchClasses = async () => {
       try {
         setPending(true);
-        const teachers = await getTeachers();
-        setTeamMembers(teachers);
+        const classes = await getClasses();
+        setClasses(classes);
       } catch (error) {
         console.error("Error fetching teachers: ", error);
       } finally {
@@ -64,10 +57,11 @@ const Teacher = () => {
       }
     };
 
-    fetchTeachers();
+    fetchClasses();
   }, []);
   return (
     <Layout>
+      {" "}
       <div className="sticky top-0 bg-white z-10 pr-3 p-1 shadow-sm">
         <div className="flex justify-between items-center">
           <div className="flex space-x-4">
@@ -101,36 +95,9 @@ const Teacher = () => {
           </div>
         </div>
       </div>
-      <div className="w-full mr-4 pr-4 pt-2">
-        {pending ? (
-          <div>Loading...</div>
-        ) : (
-          <UserCardTwo teamMembers={teamMembers} />
-        )}
-      </div>
-      <MainModal isOpen={showModal} onClose={handleModal} title="Add Teacher">
-        <MainForm action={createTeacher}>
-          <div className="flex justify-between ">
-            <Input
-              label="First Name"
-              name="first_name"
-              type="text"
-              required={true}
-              placeholder="Enter First Name"
-            />
-
-            <Input
-              label="Last Name"
-              name="last_name"
-              type="text"
-              placeholder="Enter Last Name"
-            />
-          </div>
-          <Submit disabled={pending} name={"Submit"} />
-        </MainForm>
-      </MainModal>
+      <div>Grade</div>
     </Layout>
   );
 };
 
-export default Teacher;
+export default Grade;
