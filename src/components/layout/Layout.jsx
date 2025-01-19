@@ -3,7 +3,7 @@ import NavBar from "../navigations/NavBar";
 import Footer from "../navigations/Footer";
 const Layout = ({ children }) => {
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] grid-cols-[auto_1fr] gap-1 sm:gap-16 h-screen font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[auto_1fr_auto] grid-cols-[auto_1fr] gap-1 sm:gap-16 h-screen font-[family-name:var(--font-geist-sans)] p-3">
       <div className="col-start-1 row-start-1 row-span-2 sm:col-span-1 overflow-y-auto h-screen">
         <SideBar />
       </div>

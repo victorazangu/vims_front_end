@@ -24,9 +24,7 @@ const navigation = {
   students: {
     title: "Students",
     icon: faUserGraduate,
-    items: [
-      { title: "Students", link: "/students" },
-    ],
+    items: [{ title: "Students", link: "/students" }],
   },
   teachers: {
     title: "Teachers",
@@ -36,31 +34,22 @@ const navigation = {
   classes: {
     title: "Classes",
     icon: faBook,
-    items: [
-      { title: "Classes", link: "/classes" },
-    ],
+    items: [{ title: "Classes", link: "/classes" }],
   },
   subjects: {
     title: "Subjects",
     icon: faClipboardList,
-    items: [
-      { title: "Subjects", link: "/subjects" },
-    ],
+    items: [{ title: "Subjects", link: "/subjects" }],
   },
   attendance: {
     title: "Attendance",
     icon: faCalendarCheck,
-    items: [
-      { title: "Attendance", link: "/attendances" },
-    ],
+    items: [{ title: "Attendance", link: "/attendances" }],
   },
   grades: {
     title: "Grades",
     icon: faChartBar,
-    items: [
-      { title: "Grades", link: "/grades" },
-
-    ],
+    items: [{ title: "Grades", link: "/grades" }],
   },
   fees: {
     title: "Fees",
@@ -70,9 +59,7 @@ const navigation = {
   settings: {
     title: "Settings",
     icon: faCogs,
-    items: [
-      { title: "Settings", link: "/settings" },
-    ],
+    items: [{ title: "Settings", link: "/settings" }],
   },
 };
 
@@ -398,103 +385,103 @@ const teachersDataTwo = [
     name: "Leslie Alexander",
     title: "Co-Founder / CEO",
     emp_id: "VSA-001",
-    imgSrc: UserImage,
+    image: UserImage,
   },
   {
     name: "Michael Foster",
     title: "Co-Founder / CTO",
     emp_id: "VSA-002",
-    imgSrc: UserImage,
+    image: UserImage,
   },
   {
     name: "Dries Vincent",
     title: "Business Relations",
     emp_id: "VSA-003",
-    imgSrc: UserImage,
+    image: UserImage,
   },
   {
     name: "Lindsay Walton",
     title: "Front-end Developer",
     emp_id: "VSA-004",
-    imgSrc: UserImage,
+    image: UserImage,
   },
   {
     name: "Courtney Henry",
     title: "Designer",
     emp_id: "VSA-005",
-    imgSrc: UserImage,
+    image: UserImage,
   },
   {
     name: "Tom Cook",
     title: "Director of Product",
     emp_id: "VSA-006",
-    imgSrc: UserImage,
+    image: UserImage,
   },
   {
     name: "Whitney Francis",
     title: "Copywriter",
     emp_id: "VSA-007",
-    imgSrc: UserImage,
+    image: UserImage,
   },
   {
     name: "Leonard Krasner",
     title: "Senior Designer",
     emp_id: "VSA-008",
-    imgSrc: UserImage,
+    image: UserImage,
   },
   {
     name: "Courtney Henry",
     title: "Designer",
     emp_id: "VSA-005",
-    imgSrc: UserImage,
+    image: UserImage,
   },
   {
     name: "Tom Cook",
     title: "Director of Product",
     emp_id: "VSA-006",
-    imgSrc: UserImage,
+    image: UserImage,
   },
   {
     name: "Whitney Francis",
     title: "Copywriter",
     emp_id: "VSA-007",
-    imgSrc: UserImage,
+    image: UserImage,
   },
   {
     name: "Leonard Krasner",
     title: "Senior Designer",
     emp_id: "VSA-008",
-    imgSrc: UserImage,
+    image: UserImage,
   },
   {
     name: "Leslie Alexander",
     title: "Co-Founder / CEO",
     emp_id: "VSA-001",
-    imgSrc: UserImage,
+    image: UserImage,
   },
   {
     name: "Michael Foster",
     title: "Co-Founder / CTO",
     emp_id: "VSA-002",
-    imgSrc: UserImage,
+    image: UserImage,
   },
   {
     name: "Dries Vincent",
     title: "Business Relations",
     emp_id: "VSA-003",
-    imgSrc: UserImage,
+    image: UserImage,
   },
   {
     name: "Lindsay Walton",
     title: "Front-end Developer",
     emp_id: "VSA-004",
-    imgSrc: UserImage,
+    image: UserImage,
   },
   {
     name: "Courtney Henry",
     title: "Designer",
     emp_id: "VSA-005",
-    imgSrc: UserImage,
+    image: UserImage,
   },
 ];
 const classesData = [
@@ -604,6 +591,185 @@ const classesData = [
   },
 ];
 
+const subjectsData = [
+  {
+    id: 1,
+    name: "Mathematics",
+    code: "MATH101",
+    class: "Class 10A",
+    teacher: "Mr. John Doe",
+    duration: "1 hour",
+    department: "Science",
+    description: "Introduction to algebra, geometry, and calculus.",
+  },
+  {
+    id: 2,
+    name: "English Language",
+    code: "ENG102",
+    class: "Class 10A",
+    teacher: "Ms. Jane Smith",
+    duration: "1 hour",
+    department: "Languages",
+    description: "Focus on grammar, literature, and writing skills.",
+  },
+  {
+    id: 3,
+    name: "Physics",
+    code: "PHY103",
+    class: "Class 11B",
+    teacher: "Mr. Michael Johnson",
+    duration: "1.5 hours",
+    department: "Science",
+    description: "Study of mechanics, thermodynamics, and electromagnetism.",
+  },
+  {
+    id: 4,
+    name: "Chemistry",
+    code: "CHE104",
+    class: "Class 10B",
+    teacher: "Dr. Sarah Williams",
+    duration: "1 hour",
+    department: "Science",
+    description: "Organic and inorganic chemistry concepts.",
+  },
+  {
+    id: 5,
+    name: "Biology",
+    code: "BIO105",
+    class: "Class 12A",
+    teacher: "Ms. Emily Brown",
+    duration: "1 hour",
+    department: "Science",
+    description: "Focus on human biology, plants, and ecology.",
+  },
+  {
+    id: 6,
+    name: "History",
+    code: "HIS106",
+    class: "Class 11A",
+    teacher: "Mr. Thomas Green",
+    duration: "1 hour",
+    department: "Humanities",
+    description: "World history and historical events analysis.",
+  },
+  {
+    id: 7,
+    name: "Geography",
+    code: "GEO107",
+    class: "Class 10B",
+    teacher: "Ms. Lucy Grey",
+    duration: "1 hour",
+    department: "Humanities",
+    description: "Physical geography, climate, and maps.",
+  },
+  {
+    id: 8,
+    name: "Economics",
+    code: "ECO108",
+    class: "Class 12B",
+    teacher: "Mr. Alan White",
+    duration: "1 hour",
+    department: "Social Sciences",
+    description: "Introduction to microeconomics and macroeconomics.",
+  },
+  {
+    id: 9,
+    name: "Physical Education",
+    code: "PE109",
+    class: "Class 9A",
+    teacher: "Ms. Rachel Black",
+    duration: "1 hour",
+    department: "Sports",
+    description: "Physical exercises and sports activities.",
+  },
+  {
+    id: 10,
+    name: "Computer Science",
+    code: "CS110",
+    class: "Class 12A",
+    teacher: "Mr. Robert James",
+    duration: "1 hour",
+    department: "Technology",
+    description: "Programming, data structures, and computer systems.",
+  },
+];
+const tableColumnsSubjects = [
+  { header: "Subject Name", accessor: "name" },
+  { header: "Code", accessor: "code" },
+  { header: "Class", accessor: "class" },
+  { header: "Duration", accessor: "duration" },
+  { header: "Teacher", accessor: "teacher" },
+  { header: "Department", accessor: "department" },
+];
+
+const tableColumnsFees = [
+  { header: "Fee Category", accessor: "category" },
+  {
+    header: "Amount",
+    accessor: "amount",
+    Cell: ({ value }) => `$${value.toFixed(2)}`,
+  },
+  {
+    header: "Due Date",
+    accessor: "dueDate",
+    Cell: ({ value }) => new Date(value).toLocaleDateString(),
+  },
+  { header: "Description", accessor: "description" },
+];
+
+const feeData = [
+  {
+    id: 1,
+    category: "Tuition Fee",
+    amount: 1200,
+    dueDate: "2025-02-01",
+    description: "Fee for academic courses for the semester.",
+  },
+  {
+    id: 2,
+    category: "Hostel Fee",
+    amount: 500,
+    dueDate: "2025-03-01",
+    description: "Accommodation fee for the semester.",
+  },
+  {
+    id: 3,
+    category: "Exam Fee",
+    amount: 300,
+    dueDate: "2025-04-15",
+    description: "Fee for the end-of-term exams.",
+  },
+  {
+    id: 4,
+    category: "Library Fee",
+    amount: 100,
+    dueDate: "2025-05-01",
+    description: "Fee for library access and resources.",
+  },
+  {
+    id: 5,
+    category: "Sports Fee",
+    amount: 150,
+    dueDate: "2025-06-01",
+    description: "Fee for sports and extracurricular activities.",
+  },
+  {
+    id: 6,
+    category: "Technology Fee",
+    amount: 200,
+    dueDate: "2025-07-01",
+    description:
+      "Fee for technology usage, including internet and lab resources.",
+  },
+  {
+    id: 7,
+    category: "Transport Fee",
+    amount: 250,
+    dueDate: "2025-08-01",
+    description: "Fee for transportation services provided by the school.",
+  },
+];
+
 export {
   navigation,
   radioOptions,
@@ -621,4 +787,8 @@ export {
   teachersData,
   teachersDataTwo,
   classesData,
+  subjectsData,
+  tableColumnsSubjects,
+  tableColumnsFees,
+  feeData,
 };

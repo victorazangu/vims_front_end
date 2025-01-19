@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import DefaultImage from "@/assets/images/default.png";
 
@@ -9,16 +8,16 @@ const TeacherMyProfileComponent = ({ teacher }) => {
       <div className="bg-white shadow rounded-lg p-6 mb-6">
         <div className="flex items-center space-x-4">
           <Image
-            src={teacher.imgSrc || DefaultImage}
+            src={teacher?.image || DefaultImage}
             alt="Profile"
             className="w-24 h-24 rounded-full"
           />
           <div>
             <h2 className="text-xl font-semibold text-gray-800">
-              {teacher.name}
+              {teacher?.name}
             </h2>
-            <p className="text-gray-600">{teacher.title}</p>
-            <p className="text-gray-600">{teacher.emp_id}</p>
+            <p className="text-gray-600">{teacher?.title}</p>
+            <p className="text-gray-600">{teacher?.emp_id}</p>
           </div>
         </div>
       </div>

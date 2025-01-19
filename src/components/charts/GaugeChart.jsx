@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
@@ -49,8 +48,8 @@ const GaugeChart = ({ labels, input, stats, backgroundColor }) => {
         {percentage}%
       </div>
       <div style={{ textAlign: "center", marginTop: "10px" }}>
-        {stats.map((stat) => (
-          <p key={stat.id}>
+        {stats.map((stat, index) => (
+          <p key={index}>
             {stat.title} : {stat.value}
           </p>
         ))}

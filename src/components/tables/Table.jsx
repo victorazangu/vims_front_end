@@ -2,7 +2,7 @@
 import TableRow from "./TableRow";
 import TableHead from "./TableHead";
 
-const Table = ({ caption, description, columns, data, actions }) => {
+const Table = ({ caption, description, columns, data, actions, onOpenModal }) => {
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
       <table className="w-full text-sm text-left rtl:text-right">
@@ -20,13 +20,14 @@ const Table = ({ caption, description, columns, data, actions }) => {
             <TableHead header="Action" />
           </tr>
         </thead>
-        <tbody >
+        <tbody>
           {data.map((row, index) => (
             <TableRow
               key={index}
               columns={columns}
               rowData={row}
               actions={actions}
+              onOpenModal={onOpenModal} 
             />
           ))}
         </tbody>

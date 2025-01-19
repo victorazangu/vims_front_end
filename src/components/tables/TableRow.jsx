@@ -1,16 +1,10 @@
 "use client";
 import TableCell from "./TableCell";
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useRouter } from "next/navigation";
 
-const TableRow = ({ columns, rowData, actions }) => {
-  const router = useRouter();
-  const handleCardClick = (empId) => {
-    router.push(`/students/${empId}`);
-  };
+const TableRow = ({ columns, rowData, actions, onOpenModal }) => {
   return (
-    <tr className="bg-white border-b  dark:border-gray-700">
+    <tr className="bg-white border-b dark:border-gray-700">
       {columns.map((column, idx) => (
         <TableCell key={idx} className={column.className}>
           {rowData[column.accessor]}
@@ -21,7 +15,7 @@ const TableRow = ({ columns, rowData, actions }) => {
           {actions.map((action, idx) => (
             <button
               key={idx}
-              onClick={() => handleCardClick(rowData.id)}
+              onClick={() => onOpenModal(action.label.toLowerCase(), rowData)}
               className="font-medium hover:underline text-center text-[#b99c6f]"
             >
               <FontAwesomeIcon

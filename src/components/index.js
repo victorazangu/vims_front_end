@@ -34,6 +34,9 @@ import StudentMyProfileComponent from "./commons/students/StudentMyProfileCompon
 import DateRangePicker from "./commons/filtering/DateRangePicker";
 import DropdownFilter from "./commons/filtering/DropdownFilter";
 import CustomSelect from "./commons/filtering/CustomSelect";
+import LoginSettings from "./commons/settings/LoginSettings";
+import LogoutButton from "./buttons/LogoutButton";
+import Popup from "./modals/PopUp";
 
 export {
   SideBar,
@@ -72,4 +75,7 @@ export {
   DateRangePicker,
   DropdownFilter,
   CustomSelect,
+  LoginSettings,
+  LogoutButton,
+  Popup
 };
