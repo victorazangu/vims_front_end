@@ -1,103 +1,91 @@
-
 "use client";
-import {
-  Layout,
-  DropdownFilter,
-  DateRangePicker,
-  CustomSelect,
-  SimpleButton,
-} from "@/components";
+
 import { useState, useEffect } from "react";
+import WeeklyAttendance from "./weekly-attendance";
+import styles from "./attendance.module.css";
+import { fetchMockedData } from "./actions";
+import { Layout } from "@/components";
 
-const Attendance = () => {
-  const [showModal, setShowModal] = useState(false);
-  const handleModal = () => setShowModal(!showModal);
-  const [selectedOption, setSelectedOption] = useState("");
-  const [fromDate, setFromDate] = useState(
-    new Date(new Date().getFullYear(), 0, 2).toISOString().split("T")[0]
+const getFormattedDate = (date) => {
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const year = date.getFullYear();
+  return `${year}-${month}-${day}`;
+};
+
+const Page = () => {
+  const [currentWeekStart, setCurrentWeekStart] = useState(
+    getMonday(new Date())
   );
-  const [toDate, setToDate] = useState(
-    new Date(new Date().getFullYear(), 11, 32).toISOString().split("T")[0]
-  );
-  const [selectedUser, setSelectedUser] = useState("");
-
-  const users = [
-    "Wade Cooper",
-    "Arlene Mccoy",
-    "Devon Webb",
-    "Tom Cook",
-    "Tanya Fox",
-    "Hellen Schmidt",
-    "Caroline Schultz",
-  ];
-  const dropdownOptions = ["Form 1", "Form 2", "Form 3", "Form 4"];
-
-  const logFilters = () => {
-    console.log("Filters:");
-    console.log("Class:", selectedOption);
-    console.log("From Date:", fromDate);
-    console.log("To Date:", toDate);
-    console.log("Assigned to:", selectedUser);
-  };
+  const [attendanceData, setAttendanceData] = useState({});
+  const [students, setStudents] = useState([]);
+  const [classData, setClassData] = useState(null);
+  const weekDays = getWeekDays(currentWeekStart);
 
   useEffect(() => {
-    logFilters();
-  }, [selectedOption, fromDate, toDate, selectedUser]);
-
-  useEffect(() => {
-    const fetchClasses = async () => {
-      try {
-        setPending(true);
-        const classes = await getClasses();
-        setClasses(classes);
-      } catch (error) {
-        console.error("Error fetching teachers: ", error);
-      } finally {
-        setPending(false);
-      }
+    const fetchAttendance = async () => {
+      const data = await fetchMockedData();
+      console.log("data", data);
+      setAttendanceData(data.attendance);
+      setStudents(data.students);
+      setClassData(data.classData);
     };
 
-    fetchClasses();
+    fetchAttendance();
   }, []);
+
+  const handleWeekChange = (increment) => {
+    const newWeekStart = new Date(currentWeekStart);
+    newWeekStart.setDate(newWeekStart.getDate() + increment * 7);
+    setCurrentWeekStart(newWeekStart);
+  };
+
+  const handleAttendanceChange = (studentId, date, isChecked) => {
+    const currentAttendance = { ...attendanceData };
+    if (currentAttendance[studentId]) {
+      currentAttendance[studentId][date] = isChecked;
+    } else {
+      currentAttendance[studentId] = { [date]: isChecked };
+    }
+    setAttendanceData(currentAttendance);
+  };
+
   return (
     <Layout>
-      {" "}
-      <div className="sticky top-0 bg-white z-10 pr-3 p-1 shadow-sm">
-        <div className="flex justify-between items-center">
-          <div className="flex space-x-4">
-            <div>
-              <DropdownFilter
-                options={dropdownOptions}
-                selected={selectedOption}
-                onChange={setSelectedOption}
-                placeholder="Class"
-              />
-            </div>
-            <div>
-              <DateRangePicker
-                fromDate={fromDate}
-                toDate={toDate}
-                onFromDateChange={setFromDate}
-                onToDateChange={setToDate}
-              />
-            </div>
-            <div className="">
-              <CustomSelect
-                label=""
-                options={users}
-                selected={selectedUser}
-                onChange={setSelectedUser}
-              />
-            </div>
-          </div>
-          <div>
-            <SimpleButton title={"Add Fee"} onClick={handleModal} />
-          </div>
+      <div className={styles.container}>
+        <h1>
+          Attendance for {classData?.className} ({classData?.teacher})
+        </h1>
+        <div className={styles.weekNavigation}>
+          <button onClick={() => handleWeekChange(-1)}> Previous Week</button>
+          <span>Week of {getFormattedDate(currentWeekStart)}</span>
+          <button onClick={() => handleWeekChange(1)}>Next Week </button>
         </div>
+        <WeeklyAttendance
+          weekDays={weekDays}
+          attendanceData={attendanceData}
+          onAttendanceChange={handleAttendanceChange}
+          students={students}
+        />
       </div>
-      <div>Attendance</div>
     </Layout>
   );
 };
 
-export default Attendance;
+function getMonday(date) {
+  const day = date.getDay();
+  const diff = date.getDate() - day + (day === 0 ? -6 : 1);
+  return new Date(date.setDate(diff));
+}
+
+function getWeekDays(weekStart) {
+  const days = [];
+  for (let i = 0; i < 7; i++) {
+    const day = new Date(weekStart);
+    day.setDate(weekStart.getDate() + i);
+    days.push(getFormattedDate(day));
+  }
+  return days;
+}
+
+export default Page;

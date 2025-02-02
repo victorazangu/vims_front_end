@@ -18,6 +18,7 @@ const Fees = () => {
   const [showModal, setShowModal] = useState(false);
   const [actionType, setActionType] = useState("");
   const [selectedFee, setSelectedFee] = useState(null);
+  const [selectedClass, setSelectedClass] = useState(null);
   const [fees, setFees] = useState([]);
   const [feeAmount, setFeeAmount] = useState("");
   const [feeCategory, setFeeCategory] = useState("");
@@ -65,6 +66,13 @@ const Fees = () => {
 
   const feeCategories = ["Tuition", "Hostel", "Exam", "Library"];
 
+  const classes = [
+    "Form 1",
+    "Form 2",
+    "Form 3",
+    "Form 4",
+  ];
+
   const renderModalContent = () => {
     switch (actionType) {
       case "add":
@@ -89,6 +97,7 @@ const Fees = () => {
                 onChange={setFeeCategory}
               />
             </div>
+           
             <div className="mb-4">
               <Input
                 label="Due Date"
@@ -201,6 +210,14 @@ const Fees = () => {
                 options={feeCategories}
                 selected={selectedCategory}
                 onChange={setSelectedCategory}
+              />
+            </div>
+            <div className="">
+              <CustomSelect
+                label=""
+                options={classes}
+                selected={selectedClass}
+                onChange={setSelectedClass}
               />
             </div>
           </div>

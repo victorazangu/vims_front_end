@@ -37,6 +37,9 @@ import CustomSelect from "./commons/filtering/CustomSelect";
 import LoginSettings from "./commons/settings/LoginSettings";
 import LogoutButton from "./buttons/LogoutButton";
 import Popup from "./modals/PopUp";
+import SystemActionItem from "./commons/settings/SystemActionItem";
+import ProfileForm from "./commons/settings/ProfileForm";
+import SecurityForm from "./commons/settings/SecurityForm";
 
 export {
   SideBar,
@@ -77,5 +80,8 @@ export {
   CustomSelect,
   LoginSettings,
   LogoutButton,
-  Popup
+  Popup,
+  SystemActionItem,
+  ProfileForm,
+  SecurityForm
 };

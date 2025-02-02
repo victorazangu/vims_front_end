@@ -16,7 +16,7 @@ const UserCardTwo = ({ teamMembers }) => {
           onClick={() => handleCardClick(member.emp_id)}
         >
           <Image
-            src={member.imgSrc}
+            src={member.image}
             alt={member.name}
             className="w-full h-50 object-cover"
           />

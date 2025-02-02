@@ -3,18 +3,19 @@ import { Layout, StudentMyProfileComponent } from "@/components";
 import Image from "next/image";
 import DefaultImage from "@/assets/images/default.png";
 import { getStudent } from "../actions";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 
 const SingleStudent = ({ params }) => {
   const [student, setStudent] = useState([]);
   const [pending, setPending] = useState(true);
   const [activeTab, setActiveTab] = useState("profile");
+  const { id } = use(params);
 
   useEffect(() => {
     const fetchStudent = async () => {
       try {
         setPending(true);
-        const id = await params.id;
+
         const student = await getStudent(id);
         setStudent(student);
       } catch (error) {

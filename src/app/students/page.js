@@ -14,20 +14,9 @@ import {
 import { tableColumns, tableData, tableActions } from "@/data/constants";
 import { createStudent, updateStudent, deleteStudent } from "./actions";
 const Student = () => {
-  // const initialValues = {
-  //   first_name: "",
-  //   last_name: "",
-  //   email: "",
-  //   phone: "",
-  //   address: "",
-  //   city: "",
-  //   state: "",
-  //   zip: "",
-  // };
+
   const [showModal, setShowModal] = useState(false);
   const [actionType, setActionType] = useState("");
-  // const [state, formAction, pending] = useActionState(handleStudentForm, initialValues);
-  // TODO : uncomment the above line
   const pending = false;
 
   const handleModal = () => setShowModal(!showModal);
@@ -39,15 +28,7 @@ const Student = () => {
   );
   const [selectedUser, setSelectedUser] = useState("");
 
-  const users = [
-    "English",
-    "Kiswahili",
-    "Chemistry",
-    "Physics",
-    "Biology",
-    "Mathematics",
-    "History",
-  ];
+  const users = ["Form 1", "Form 2", "Form 3", "Form 4"];
 
   const logFilters = () => {
     console.log("Filters:");
@@ -68,7 +49,6 @@ const Student = () => {
       window.location.href = `/students/${rowData.id}`;
     } else if (actionType === "edit" || actionType === "delete") {
       setActionType(actionType);
-      // setSelectedUser(rowData);
       setShowModal(true);
     }
   };
@@ -131,7 +111,6 @@ const Student = () => {
               required={true}
               placeholder="Enter First Name"
             />
-
             <Input
               label="Last Name"
               name="last_name"

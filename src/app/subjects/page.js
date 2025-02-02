@@ -63,13 +63,10 @@ const Subjects = () => {
   }, []);
 
   const users = [
-    "English",
-    "Kiswahili",
-    "Chemistry",
-    "Physics",
-    "Biology",
-    "Mathematics",
-    "History",
+    "Form 1",
+    "Form 2",
+    "Form 3",
+    "Form 4",
   ];
 
   const renderModalContent = () => {

@@ -1,22 +1,22 @@
-
 "use client";
 import { Layout, TeacherMyProfileComponent } from "@/components";
 import Image from "next/image";
 import DefaultImage from "@/assets/images/default.png";
 import Link from "next/link";
 import { getTeacher } from "../actions";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 
 const SingleTeacher = ({ params }) => {
   const [teacher, setTeacher] = useState([]);
   const [pending, setPending] = useState(true);
   const [activeTab, setActiveTab] = useState("profile");
+  const { id } = use(params);
 
   useEffect(() => {
     const fetchTeachers = async () => {
       try {
         setPending(true);
-        const id = await params.id;
+
         const teacher = await getTeacher(id);
         setTeacher(teacher);
       } catch (error) {

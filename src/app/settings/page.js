@@ -1,37 +1,101 @@
 "use client";
-import { Layout, TeacherMyProfileComponent } from "@/components";
+import {
+  Layout,
+  SystemActionItem,
+  ProfileForm,
+  SecurityForm,
+} from "@/components";
 import { useState, useEffect } from "react";
-import { getAuthUser } from "./actions";
+import { fetchSystemActions } from "./actions";
 
 const SettingsPage = () => {
-  const [authUser, setAuthUser] = useState(null);
+  const [systemSettings, setSystemSettings] = useState({});
   const [pending, setPending] = useState(true);
   const [activeTab, setActiveTab] = useState("profile");
-
+  const [profileData, setProfileData] = useState({});
+  const [securityData, setSecurityData] = useState({});
   useEffect(() => {
-    const fetchAuthUser = async () => {
+    const fetchInitialData = async () => {
       try {
         setPending(true);
-        const user = await getAuthUser();
-        setAuthUser(user);
+        const data = await fetchSystemActions();
+        setSystemSettings(data);
+        setProfileData({
+          firstName: "Victor",
+          lastName: "Azangu",
+          email: "victor@example.com",
+          phone: "(213) 555-1234",
+          bio: "Software Engineer",
+          address: {
+            country: "United States of America",
+            state: "CALIFORNIA, USA",
+            postalCode: "ERT 62574",
+            taxId: "AS56478969",
+          },
+        });
+        setSecurityData({
+          currentPassword: "password",
+          newPassword: "",
+          confirmPassword: "",
+        });
       } catch (error) {
-        console.error("Error fetching authenticated user: ", error);
+        console.error("Error fetching system settings: ", error);
       } finally {
         setPending(false);
       }
     };
 
-    fetchAuthUser();
+    fetchInitialData();
   }, []);
 
+  const handleUpdateSettings = (actionId, updatedSettings) => {
+    setSystemSettings((prevSettings) => {
+      return {
+        ...prevSettings,
+        [actionId]: {
+          ...prevSettings[actionId],
+          settings: updatedSettings,
+        },
+      };
+    });
+    console.log("Updated settings:", actionId, updatedSettings);
+  };
+  const handleProfileSubmit = (updatedData) => {
+    setProfileData(updatedData);
+    console.log("Updated profile:", updatedData);
+  };
+  const handleSecuritySubmit = (updatedData) => {
+    setSecurityData(updatedData);
+    console.log("Updated security:", updatedData);
+  };
   const renderContent = () => {
     switch (activeTab) {
       case "profile":
-        return <TeacherMyProfileComponent user={authUser} />;
+        return (
+          <ProfileForm
+            initialProfileData={profileData}
+            onSubmit={handleProfileSubmit}
+          />
+        );
       case "system-actions":
-        return <p className="text-gray-800">System Actions Placeholder</p>;
+        return (
+          <div>
+            {Object.values(systemSettings).map((action) => (
+              <SystemActionItem
+                key={action.id}
+                action={action}
+                onUpdateSettings={handleUpdateSettings}
+              />
+            ))}
+          </div>
+        );
       case "security":
-        return <p className="text-gray-800">Security</p>;
+        return (
+          <SecurityForm
+            initialSecurityData={securityData}
+            onSubmit={handleSecuritySubmit}
+          />
+        );
       default:
         return <p className="text-gray-800">Select a tab to view details.</p>;
     }
@@ -47,16 +111,6 @@ const SettingsPage = () => {
             <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
             <span className="sr-only">Loading...</span>
           </div>
-        </div>
-      </Layout>
-    );
-  }
-
-  if (!authUser) {
-    return (
-      <Layout>
-        <div className="flex bg-gray-50 min-h-screen items-center justify-center">
-          <p className="text-gray-500">User data not found.</p>
         </div>
       </Layout>
     );

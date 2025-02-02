@@ -703,6 +703,8 @@ const tableColumnsSubjects = [
 ];
 
 const tableColumnsFees = [
+  { header: "Student ID", accessor: "student_id" },
+  { header: "Student Name", accessor: "student" },
   { header: "Fee Category", accessor: "category" },
   {
     header: "Amount",
@@ -720,6 +722,8 @@ const tableColumnsFees = [
 const feeData = [
   {
     id: 1,
+    student: "Victor Shemi",
+    student_id: "VIMS-0001",
     category: "Tuition Fee",
     amount: 1200,
     dueDate: "2025-02-01",
@@ -727,6 +731,8 @@ const feeData = [
   },
   {
     id: 2,
+    student: "Mary Jane",
+    student_id: "VIMS-0002",
     category: "Hostel Fee",
     amount: 500,
     dueDate: "2025-03-01",
@@ -734,6 +740,8 @@ const feeData = [
   },
   {
     id: 3,
+    student: "John Kamau",
+    student_id: "VIMS-0003",
     category: "Exam Fee",
     amount: 300,
     dueDate: "2025-04-15",
@@ -741,6 +749,8 @@ const feeData = [
   },
   {
     id: 4,
+    student: "Teresia Kadogo",
+    student_id: "VIMS-0004",
     category: "Library Fee",
     amount: 100,
     dueDate: "2025-05-01",
@@ -748,6 +758,8 @@ const feeData = [
   },
   {
     id: 5,
+    student: "Fiona Shemi",
+    student_id: "VIMS-0001",
     category: "Sports Fee",
     amount: 150,
     dueDate: "2025-06-01",
@@ -755,6 +767,8 @@ const feeData = [
   },
   {
     id: 6,
+    student: "Njoki Aggie",
+    student_id: "VIMS-0001",
     category: "Technology Fee",
     amount: 200,
     dueDate: "2025-07-01",
@@ -763,12 +777,57 @@ const feeData = [
   },
   {
     id: 7,
+    student: "Moureen khamete",
+    student_id: "VIMS-0001",
     category: "Transport Fee",
     amount: 250,
     dueDate: "2025-08-01",
     description: "Fee for transportation services provided by the school.",
   },
 ];
+
+const MOCKED_STUDENTS = [
+  { id: "student1", name: "Alice Smith" },
+  { id: "student2", name: "Bob Johnson" },
+  { id: "student3", name: "Charlie Brown" },
+  { id: "student4", name: "Diana Lee" },
+  { id: "student5", name: "Ethan Davis" },
+];
+
+const MOCKED_CLASS_DATA = {
+  className: "Grade 10",
+  teacher: "Mr. Anderson",
+};
+
+const MOCKED_ATTENDANCE_DATA = {};
+ const MOCKED_GRADES_DATA = {
+  student1: {
+    math: 85,
+    science: 92,
+    english: 78,
+  },
+  student2: {
+    math: 90,
+    science: 88,
+    english: 95,
+  },
+  student3: {
+    math: 75,
+    science: 82,
+    english: 80,
+  },
+  student4: {
+    math: 95,
+    science: 98,
+    english: 92,
+  },
+  student5: {
+    math: 80,
+    science: 85,
+    english: 88,
+  },
+};
+
 
 export {
   navigation,
@@ -791,4 +850,8 @@ export {
   tableColumnsSubjects,
   tableColumnsFees,
   feeData,
+  MOCKED_STUDENTS,
+  MOCKED_CLASS_DATA,
+  MOCKED_ATTENDANCE_DATA,
+  MOCKED_GRADES_DATA
 };
